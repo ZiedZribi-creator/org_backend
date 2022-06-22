@@ -1,0 +1,104 @@
+TECH END POINTS  : 
+
+account_interface (about) : 
+    pathname : /api/tek/id
+    authorization : token (tech)
+
+my_cpe(s)(my_cpe_list) : 
+    pathname : /api/cpe_list/
+    authorization : token (tech)
+    params : status,order_by
+
+cpe_detail : 
+    pathname : /api/cpe/id/
+    authorization : token (tech) 
+
+reboot_cpe:
+    pathname : /api/cpe/id/reboot
+    authorization : token (tech)
+
+
+ADMIN END POINTS : 
+
+client :
+    client_list  : 
+        pathname : /api/client_list/
+        authorization : token (admin)
+        params : email,city
+    client_detail : 
+        pathname : /api/client/id
+        authorization : token (admin)
+    create_client :
+        pathname : /api/create_client
+        authorization : token (admin)
+    update_client : 
+        pathname : /api/client/id/update
+        authorization : token (admin)
+        body : all fields
+    delete_client : 
+        pathname : /api/client/id/delete
+        authorization : token (admin)
+
+    add_cpe (to client) : 
+        pathname : /api/client/id/add_cpe
+        body : cpe_ids
+        authorization : token (admin)     
+    remove_cpe (to client) : 
+        pathname : /api/client/remove_cpe
+        body : cpe_ids
+        authorization : token (admin)     
+        
+
+
+tech : 
+    tech_list : 
+        pathname : /api/tech
+        authorization : token (admin)    
+        params : email,working_city
+    create_tech : 
+        pathname : /api/tech/
+        authorization : token (admin)   
+        body : all fields
+    delete_tech : 
+        pathname : /api/tech/delete_techs/
+        authorization : token (admin)   
+        body : tech_ids
+    tech_detail :
+        pathname : /api/tech/id/
+        authorization : token (admin) 
+    tech_add_cpe:
+        pathname : api/tech/id/add_cpe/
+        authorization : token (admin) 
+        body : cpe_ids
+    tech_remove_cpe:
+        pathname : api/tech/remove_cpe/
+        authorization : token (admin) 
+        body : cpe_ids    
+    tech_cpe_list:
+        pathname : /api/cpe_list/
+        authorization : token (admin)
+        params : city
+
+
+cpe : 
+    cpe_list :    
+        pathname : /api/cpe_list/
+        authorization : token (admin)
+        params : status,order_by
+    create_cpe:
+        pathname : /api/create_cpe/
+        authorization : token (admin)
+    delete_cpe :
+        pathname : /api/delete_cpe/
+        authorization : token (admin)
+        body : cpe_ids    
+    cpe_detail : 
+        pathname : /api/cpe/id/
+        authorization : token (admin) 
+        
+
+
+
+
+
+
